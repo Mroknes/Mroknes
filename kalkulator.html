@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta title="SPARTAN GAMING">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script>
+        function ObliczDPS(){
+            var name = document.getElementById('name').value;
+            var time = parseFloat(document.getElementById('time.sec').value);
+            var dmg = parseFloat(document.getElementById('dmg').value);
+            var lvl = parseFloat(document.getElementById('lvl').value);
+            
+            if(lvl > 0 && time > 0 && dmg >0){
+                var obdps = dmg * time/lvl;
+                document.getElementById('obdps').innerHTML = 'DPS postaci ' + name +' to:' + obdps;
+            } else {
+                document.getElementById('obdps').innerHTML = 'Wpisz wszystkie dane prawidłowo'; 
+            }
+        }
+    </script>
+    
+    
+</head>
+
+<body>
+    
+    <div class="h"><h1>Spartan gaming - kalkulator DPS</h1></div>
+    <div class="disfle">
+    <div class="kl">
+    <ul>
+    <li><a href="index.html">Start</a></li>    
+    <li><a href="druzyny.html">Drużyny</a></li>    
+    <li><a href="kalkulator.html">Kalkulator</a></li>    
+    <li><a href="dolacz.html">Dołącz do nas!</a></li>    
+        
+        
+    </ul>
+        </div>
+    
+    
+    <div class="kp">
+    
+        Imie postaci: <br>
+        <input type="text" id="name"><br>
+        Poziom postaci: <br>
+        <input type="number" id="lvl"><br>
+        Czas trwania walki w sekundach:<br>
+        <input type="text" id="time.sec"><br>
+        Obrażenia broni/czaru na sekundę:<br>
+        <input type="text" id="dmg"><br><br>
+        <input type="submit" name="sum" value="Oblicz DPS" onclick="ObliczDPS()"><br><br>
+    
+        <div id="obdps"></div>
+   
+    </div>
+    
+    </div>
+    
+  <div class="st">
+        Sebastian Czajkowski 4TEI<br>
+        <i>Data wykonania:<b>16.11.2019</b></i>
+    </div>
+</body>    
+
+
+</html>
